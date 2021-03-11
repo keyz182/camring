@@ -1,0 +1,27 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="Ring.MainWindow"
+        mc:Ignorable="d"
+        Title="Color Picker Dialog - Demo"
+        Height="390" Width="368"
+        Closing="DataWindow_Closing"  
+        WindowStartupLocation="CenterScreen" Background="LightGray"
+        xmlns:views="clr-namespace:ColorPickerLib.Controls;assembly=ColorPickerLib">
+    <Grid Background="LightGray">
+        <DockPanel Background="LightGray" Margin="5,5,5,5">
+
+            <views:ColorCanvas  
+                DockPanel.Dock = "Top"
+                Background="LightGray"
+                SelectedColor="{Binding Color, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                A="{Binding A, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="300" Width="366">
+            </views:ColorCanvas>
+            <Button DockPanel.Dock = "Right" Height="35" Width="60" Content="Reset" HorizontalAlignment="Right" Click="Reset_Click"></Button>
+            <Button DockPanel.Dock = "Left" Height="35" Width="60" Content="Rainbow" HorizontalAlignment="Right" Click="Rainbow_Click"></Button>
+            <Button DockPanel.Dock = "Left" Height="35" Width="60" Content="Set" HorizontalAlignment="Left" Click="Set_Click"></Button>
+        </DockPanel>
+    </Grid>
+</Window>
